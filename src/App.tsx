@@ -6,7 +6,9 @@ import { LoginScreen } from "./screens/LoginScreen";
 import { SignUpScreen } from "./screens/SignUpScreen";
 import { SelectExperienceScreen } from "./screens/SelectExperienceScreen";
 import { AgeGenderScreen } from "./screens/AgeGenderScreen";
-import { TrainingPrefsScreen } from "./screens/TrainingPrefsScreen";
+import { ExerciseDaysScreen } from "./screens/ExerciseDaysScreen";
+import { FitnessGoalsScreen } from "./screens/FitnessGoalsScreen";
+import { WorkoutTimeScreen } from "./screens/WorkoutTimeScreen";
 import { TabShell } from "./screens/TabShell";
 import { HomeMatchScreen } from "./screens/HomeMatchScreen";
 import { SocialFeedScreen } from "./screens/SocialFeedScreen";
@@ -31,10 +33,12 @@ export default function App() {
                 path="/onboarding/age-gender"
                 element={<AgeGenderScreen />}
               />
+              <Route path="/onboarding/days" element={<ExerciseDaysScreen />} />
               <Route
-                path="/onboarding/training"
-                element={<TrainingPrefsScreen />}
+                path="/onboarding/goals"
+                element={<FitnessGoalsScreen />}
               />
+              <Route path="/onboarding/time" element={<WorkoutTimeScreen />} />
               <Route path="/app" element={<TabShell />}>
                 <Route index element={<Navigate to="home" replace />} />
                 <Route path="home" element={<HomeMatchScreen />} />

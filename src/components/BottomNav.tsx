@@ -4,14 +4,14 @@ import type { ComponentType } from "react";
 type NavItem = {
   to: string;
   label: string;
-  icon?: ComponentType;
-  plus?: boolean;
+  icon?: ComponentType<{ active?: boolean }>;
+  variant?: "home" | "plus";
 };
 
 const items: NavItem[] = [
-  { to: "/app/home", label: "Home", icon: HomeIcon },
+  { to: "/app/home", label: "Home", variant: "home" },
   { to: "/app/calendar", label: "Calendar", icon: CalendarIcon },
-  { to: "/app/feed", label: "+1", plus: true },
+  { to: "/app/feed", label: "+1", variant: "plus" },
   { to: "/app/invites", label: "Invites", icon: InvitesIcon },
   { to: "/app/chat", label: "Chat", icon: ChatIcon },
 ];
@@ -23,7 +23,20 @@ export function BottomNav() {
     <nav className="bottom-nav" aria-label="Main">
       {items.map((item) => {
         const active = pathname === item.to;
-        if (item.plus) {
+        if (item.variant === "home") {
+          return (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={`nav-item${active ? " active home-active" : ""}`}
+              aria-current={active ? "page" : undefined}
+            >
+              <span className="home-bubble">1</span>
+              <span>{item.label}</span>
+            </Link>
+          );
+        }
+        if (item.variant === "plus") {
           return (
             <Link
               key={item.to}
@@ -31,8 +44,8 @@ export function BottomNav() {
               className={`nav-item plus${active ? " active" : ""}`}
               aria-current={active ? "page" : undefined}
             >
-              <span className="plus-bubble">+1</span>
-              <span className="label">{item.label}</span>
+              <span className="plus-bubble">+</span>
+              <span>{item.label}</span>
             </Link>
           );
         }
@@ -44,20 +57,12 @@ export function BottomNav() {
             className={`nav-item${active ? " active" : ""}`}
             aria-current={active ? "page" : undefined}
           >
-            <Icon />
+            <Icon active={active} />
             <span>{item.label}</span>
           </Link>
         );
       })}
     </nav>
-  );
-}
-
-function HomeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" />
-    </svg>
   );
 }
 
@@ -72,9 +77,9 @@ function CalendarIcon() {
 
 function InvitesIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M4 7.5 12 13l8-5.5" />
-      <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 21s-6.5-4.1-8.6-7.3C1.5 10.7 2.9 7.5 6.2 7.5c1.7 0 2.9.9 3.6 1.8.7-.9 1.9-1.8 3.6-1.8 3.3 0 4.7 3.2 2.8 6.2C18.5 16.9 12 21 12 21Z" />
+      <path d="M19 8.5h2v2h-2v2h-2v-2h-2v-2h2v-2h2v2Z" />
     </svg>
   );
 }
