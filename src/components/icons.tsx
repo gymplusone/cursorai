@@ -3,7 +3,8 @@ type IconProps = { size?: number; className?: string };
 export function HomeIcon({ size = 24, className }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M6.6 3.4c1.9-.6 3.1.3 3.7 1.5.5 1 .6 2.3.3 3.6-.3 1.4-1 2.7-2 3.6-1 .9-2.3 1.4-3.4 1.1-1.2-.3-1.9-1.4-2-2.8-.2-1.5.2-3.2 1-4.5.6-1 1.4-1.8 2.4-2.1Zm10.8 6.7c1.4-.2 2.4.6 2.8 1.8.3 1 .2 2.2-.3 3.3-.5 1.1-1.4 2.1-2.4 2.6-1 .5-2.2.6-3-.1-.8-.6-1-1.8-.8-3 .3-1.4 1.1-2.8 2.2-3.7.5-.4 1-.7 1.5-.9Z" />
+      <rect x="10" y="3.5" width="10.5" height="10.5" rx="3.4" transform="rotate(12 15.25 8.75)" />
+      <rect x="3.5" y="9.5" width="10.5" height="10.5" rx="3.4" transform="rotate(-8 8.75 14.75)" />
     </svg>
   );
 }
@@ -19,8 +20,9 @@ export function CalendarIcon({ size = 24, className }: IconProps) {
 
 export function PlusIcon({ size = 24, className }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" className={className} aria-hidden>
-      <path d="M12 6v12M6 12h12" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5.5" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M12 8.2v7.6M8.2 12h7.6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -28,7 +30,8 @@ export function PlusIcon({ size = 24, className }: IconProps) {
 export function InvitesIcon({ size = 24, className }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M5 3h11l3 3v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm6.9 6.2c-.6-.8-1.6-1-2.4-.4-.8.6-.9 1.7-.3 2.5.5.7 1.9 1.9 2.7 2.5.9-.6 2.3-1.8 2.8-2.5.6-.8.5-1.9-.3-2.5-.8-.6-1.8-.4-2.4.4l-.1.2Z" />
+      <path d="M6 4.5A2.5 2.5 0 0 1 8.5 2h7A2.5 2.5 0 0 1 18 4.5v14.7c0 1.1-1.25 1.74-2.14 1.1L12 17.6l-3.86 2.7c-.89.64-2.14 0-2.14-1.1V4.5Z" />
+      <path fill="#fff" d="M12 12.4c-1-.7-2.5-1.7-2.5-3 0-.8.65-1.4 1.4-1.4.5 0 .9.24 1.1.6.2-.36.6-.6 1.1-.6.75 0 1.4.6 1.4 1.4 0 1.3-1.5 2.3-2.5 3Z" />
     </svg>
   );
 }
@@ -36,7 +39,9 @@ export function InvitesIcon({ size = 24, className }: IconProps) {
 export function ChatIcon({ size = 24, className }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
-      <path d="M9 3h6a6 6 0 0 1 6 6v.5a6 6 0 0 1-6 6h-1l-3.4 2.9a.6.6 0 0 1-1-.46V15.5H9a6 6 0 0 1-6-6V9a6 6 0 0 1 6-6Z" />
+      <path d="M14 3a6 6 0 0 1 6 6c0 1.2-.35 2.3-.95 3.24.15.5.45 1.06.9 1.5.2.2.06.55-.22.55-.9-.02-1.7-.3-2.36-.72A6 6 0 0 1 8 8.9 6 6 0 0 1 14 3Z" />
+      <path d="M9 9.5a5.5 5.5 0 0 1 .2 11c-1.4 0-2.55-.35-3.4-.9-.62.4-1.36.66-2.2.68-.26.01-.4-.31-.21-.5.4-.42.68-.92.83-1.37A5.5 5.5 0 0 1 9 9.5Z" />
+      <path fill="#fff" d="M7 15.2h4M7 17.3h2.6" stroke="#fff" strokeWidth="1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -179,6 +184,14 @@ export function CardIcon({ size = 22, className }: IconProps) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
       <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
       <rect x="2.5" y="8" width="19" height="3" fill="#000" />
+    </svg>
+  );
+}
+
+export function SendIcon({ size = 22, className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden>
+      <path d="M5 12h13M6 5l13 7-13 7 2-7-2-7Z" />
     </svg>
   );
 }

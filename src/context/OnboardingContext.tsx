@@ -18,6 +18,8 @@ export type OnboardingState = {
   exerciseDays: string;
   goals: string[];
   workoutTime: string;
+  superPlusOne: boolean;
+  spotlightActive: boolean;
 };
 
 type OnboardingContextValue = {
@@ -37,6 +39,8 @@ const initial: OnboardingState = {
   exerciseDays: "",
   goals: [],
   workoutTime: "",
+  superPlusOne: false,
+  spotlightActive: false,
 };
 
 const OnboardingContext = createContext<OnboardingContextValue | null>(null);

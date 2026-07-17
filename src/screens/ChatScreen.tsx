@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { AppHeader } from "../components/AppHeader";
 import { CHAT_THREADS } from "../data/demo";
 import { SearchIcon } from "../components/icons";
 
 export function ChatScreen() {
+  const navigate = useNavigate();
   return (
     <div className="chat-screen">
       <AppHeader variant="plain" />
@@ -13,7 +15,12 @@ export function ChatScreen() {
       </div>
       <div className="thread-list">
         {CHAT_THREADS.map((t) => (
-          <button key={t.id} type="button" className="thread">
+          <button
+            key={t.id}
+            type="button"
+            className="thread"
+            onClick={() => navigate(`/app/chat/${t.id}`)}
+          >
             <div
               className={`thread-avatar${t.online ? " online" : ""}`}
               style={{ backgroundImage: `url(${t.photo})` }}

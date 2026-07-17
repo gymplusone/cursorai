@@ -122,7 +122,7 @@ export function PlusOneScreen() {
             type="button"
             className="swipe-btn like"
             aria-label="Like"
-            onClick={() => dismiss("right")}
+            onClick={() => navigate(`/app/match-success?id=${current.id}`)}
           >
             <HeartIcon size={30} />
           </button>

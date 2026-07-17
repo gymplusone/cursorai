@@ -22,13 +22,28 @@ export function HomeScreen() {
           <span className="hero-plus">+1</span>
         </div>
         <div className="hero-actions">
-          <button type="button" className="hero-btn nope" aria-label="Skip">
+          <button
+            type="button"
+            className="hero-btn nope"
+            aria-label="Skip"
+            onClick={() => navigate("/app/plus-one")}
+          >
             <XIcon size={20} />
           </button>
-          <button type="button" className="hero-btn boost" aria-label="Boost">
+          <button
+            type="button"
+            className="hero-btn boost"
+            aria-label="Boost"
+            onClick={() => navigate("/app/spotlight")}
+          >
             <BoltIcon size={22} />
           </button>
-          <button type="button" className="hero-btn like" aria-label="Match">
+          <button
+            type="button"
+            className="hero-btn like"
+            aria-label="Match"
+            onClick={() => navigate(`/app/match-success?id=${profile.id}`)}
+          >
             <CheckIcon size={22} />
           </button>
         </div>
@@ -109,17 +124,27 @@ export function HomeScreen() {
       </section>
 
       <div className="hero-actions floating">
-        <button type="button" className="hero-btn nope" aria-label="Skip">
+        <button
+          type="button"
+          className="hero-btn nope"
+          aria-label="Skip"
+          onClick={() => navigate("/app/plus-one")}
+        >
           <XIcon size={20} />
         </button>
-        <button type="button" className="hero-btn boost" aria-label="Boost">
+        <button
+          type="button"
+          className="hero-btn boost"
+          aria-label="Boost"
+          onClick={() => navigate("/app/spotlight")}
+        >
           <BoltIcon size={22} />
         </button>
         <button
           type="button"
           className="hero-btn like"
           aria-label="Match"
-          onClick={() => navigate("/app/chat")}
+          onClick={() => navigate(`/app/match-success?id=${profile.id}`)}
         >
           <CheckIcon size={22} />
         </button>

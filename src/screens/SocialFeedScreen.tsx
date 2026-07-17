@@ -54,7 +54,12 @@ export function SocialFeedScreen() {
           </div>
         </div>
         <div className="actions">
-          <button type="button" className="icon-sq" aria-label="Notifications">
+          <button
+            type="button"
+            className="icon-sq"
+            aria-label="Notifications"
+            onClick={() => navigate("/app/notifications")}
+          >
             <BellIcon />
             <span className="badge">20</span>
           </button>
@@ -62,7 +67,7 @@ export function SocialFeedScreen() {
             type="button"
             className="icon-sq"
             aria-label="Settings"
-            onClick={() => navigate("/app/spotlight")}
+            onClick={() => navigate("/app/settings")}
           >
             <GearIcon />
           </button>
