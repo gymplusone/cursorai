@@ -1,31 +1,29 @@
 # Gym+1
 
-Mobile-first React prototype for finding a workout partner.
+Mobile-first React prototype aligned to the Figma file **GYM+1 +1 SOURCE FILE**.
 
-## Screen flow
+## Flow (matches Figma +1 onboarding)
 
-1. Splash
-2. Auth gateway (Log in / Sign up)
+1. Splash — Gym+1 / Match your workout vibe
+2. Log in or sign up
 3. Login
 4. Sign up
-5. Select experience
+5. Select your experience (`+1` / Personal Trainer)
 6. Age & gender
-7. Training years / days / time
-8. Tab shell — Home, Calendar, **+1**, Invites, Chat
-9. Home / Match (swipe cards)
-10. Social feed (+1 tab)
+7. Days per week
+8. Fitness goals
+9. Workout time
+10. App shell — Home (match), Calendar, +1 (feed), Invites, Chat
 
-## Run locally
+## Run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the URL Vite prints (usually `http://localhost:5173`).
+## Design tokens (from Figma)
 
-## Stack
-
-- Vite + React + TypeScript
-- React Router
-- Local onboarding state (no backend yet)
+- Accent blue: `#0001FF`
+- Onboarding: blue radial/linear gradient, black CTAs, Manrope
+- In-app: `#FBFBFB` surfaces, white cards, blue active nav

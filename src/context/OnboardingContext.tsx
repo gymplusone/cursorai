@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 
-export type Experience = "find-partner" | "coach" | null;
+export type Experience = "plus-one" | "personal-trainer" | null;
 
 export type OnboardingState = {
   email: string;
@@ -15,15 +15,17 @@ export type OnboardingState = {
   experience: Experience;
   age: string;
   gender: string;
-  trainingYears: string;
-  trainingDays: string[];
-  trainingTime: string;
+  exerciseDays: string;
+  goals: string[];
+  workoutTime: string;
+  superPlusOne: boolean;
+  spotlightActive: boolean;
 };
 
 type OnboardingContextValue = {
   data: OnboardingState;
   update: (patch: Partial<OnboardingState>) => void;
-  toggleDay: (day: string) => void;
+  toggleGoal: (goal: string) => void;
   reset: () => void;
 };
 
@@ -34,9 +36,11 @@ const initial: OnboardingState = {
   experience: null,
   age: "",
   gender: "",
-  trainingYears: "",
-  trainingDays: [],
-  trainingTime: "",
+  exerciseDays: "",
+  goals: [],
+  workoutTime: "",
+  superPlusOne: false,
+  spotlightActive: false,
 };
 
 const OnboardingContext = createContext<OnboardingContextValue | null>(null);
@@ -48,12 +52,12 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
     () => ({
       data,
       update: (patch) => setData((prev) => ({ ...prev, ...patch })),
-      toggleDay: (day) =>
+      toggleGoal: (goal) =>
         setData((prev) => ({
           ...prev,
-          trainingDays: prev.trainingDays.includes(day)
-            ? prev.trainingDays.filter((d) => d !== day)
-            : [...prev.trainingDays, day],
+          goals: prev.goals.includes(goal)
+            ? prev.goals.filter((g) => g !== goal)
+            : [...prev.goals, goal],
         })),
       reset: () => setData(initial),
     }),

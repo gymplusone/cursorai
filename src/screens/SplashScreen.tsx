@@ -10,11 +10,9 @@ export function SplashScreen() {
   }, [navigate]);
 
   return (
-    <section className="screen splash" aria-label="Splash">
-      <div className="brand-mark">
-        Gym<span className="plus">+1</span>
-      </div>
-      <p className="tag">Train with someone</p>
+    <section className="screen gradient-bg splash" aria-label="Splash">
+      <div className="brand-mark">Gym+1</div>
+      <p className="brand-tag">Match your workout vibe</p>
     </section>
   );
 }

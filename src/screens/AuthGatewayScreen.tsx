@@ -1,25 +1,36 @@
 import { Link } from "react-router-dom";
+import { Brand, Legal } from "../components/ui";
 
 export function AuthGatewayScreen() {
   return (
-    <section className="screen auth-gateway" aria-label="Welcome">
-      <div className="brand-mark" style={{ fontSize: "2rem" }}>
-        Gym<span className="plus">+1</span>
-      </div>
-      <div className="hero-copy stack">
-        <p className="eyebrow">Welcome</p>
-        <h1>Find your next workout partner.</h1>
-        <p className="lede">
-          Match with people who train when you train — then show up together.
-        </p>
-      </div>
-      <div className="actions">
-        <Link className="btn btn-primary btn-block" to="/login">
+    <section className="screen gradient-bg auth-gateway" aria-label="Welcome">
+      <Brand />
+      <h1 className="headline">Get Started with Your Fitness Journey</h1>
+      <div className="stack" style={{ maxWidth: 343, width: "100%", margin: "0 auto" }}>
+        <Link className="btn btn-black btn-block" to="/login">
           Log in
         </Link>
-        <Link className="btn btn-ghost btn-block" to="/signup">
+        <Link className="btn btn-black btn-block" to="/signup">
           Sign up
         </Link>
+      </div>
+      <div className="spacer" />
+      <div className="stack" style={{ alignItems: "center" }}>
+        <div className="divider" style={{ width: "100%" }}>
+          or use one of these options
+        </div>
+        <div className="social-row">
+          <span className="social-dot fb" aria-hidden>
+            f
+          </span>
+          <span className="social-dot apple" aria-hidden>
+            ⌘
+          </span>
+          <span className="social-dot" aria-hidden>
+            G
+          </span>
+        </div>
+        <Legal />
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useOnboarding } from "../context/OnboardingContext";
-import { BackButton } from "../components/ui";
+import { Brand, Legal } from "../components/ui";
 
 export function LoginScreen() {
   const navigate = useNavigate();
@@ -16,47 +16,65 @@ export function LoginScreen() {
   }
 
   return (
-    <section className="screen" aria-label="Log in">
-      <BackButton to="/auth" />
-      <div className="stack stack-lg" style={{ marginTop: 12 }}>
-        <div className="stack">
-          <p className="eyebrow">Account</p>
-          <h1>Welcome back</h1>
-          <p className="lede">Log in to keep matching and training.</p>
-        </div>
-        <form className="stack" onSubmit={onSubmit}>
-          <div className="field">
-            <label htmlFor="login-email">Email</label>
-            <input
-              id="login-email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="login-password">Password</label>
-            <input
-              id="login-password"
-              type="password"
-              autoComplete="current-password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-            />
-          </div>
-          <button className="btn btn-primary btn-block" type="submit">
-            Log in
-          </button>
-        </form>
-        <p className="link-row">
-          New here? <Link to="/signup">Create an account</Link>
-        </p>
+    <section className="screen gradient-bg auth-form" aria-label="Log in">
+      <div className="top-row">
+        <span />
+        <Link className="btn-ghost-dark" to="/signup">
+          Sign up
+        </Link>
       </div>
+      <Brand />
+      <h1 className="headline">Get Started with Your Fitness Journey</h1>
+      <form
+        className="stack"
+        onSubmit={onSubmit}
+        style={{ maxWidth: 343, width: "100%", margin: "0 auto" }}
+      >
+        <div className="field">
+          <input
+            type="email"
+            autoComplete="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+        </div>
+        <div className="field">
+          <input
+            type="password"
+            autoComplete="current-password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+        </div>
+        <button className="btn btn-black btn-block" type="submit">
+          Log in
+        </button>
+        <div className="divider">or</div>
+        <button type="button" className="social-btn">
+          <span className="social-dot fb" style={{ width: 22, height: 22, fontSize: 12 }}>
+            f
+          </span>
+          continue with facebook
+        </button>
+        <button type="button" className="social-btn">
+          <span className="social-dot" style={{ width: 22, height: 22, fontSize: 12 }}>
+            G
+          </span>
+          continue with Google
+        </button>
+        <button type="button" className="social-btn">
+          <span className="social-dot apple" style={{ width: 22, height: 22, fontSize: 12 }}>
+            ⌘
+          </span>
+          continue with Apple
+        </button>
+      </form>
+      <div className="spacer" />
+      <Legal />
     </section>
   );
 }

@@ -1,11 +1,20 @@
 import { useCallback, useRef, useState, type PointerEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { MATCHES, type MatchProfile } from "../data/demo";
-import { useOnboarding } from "../context/OnboardingContext";
+import { AppHeader } from "../components/AppHeader";
+import {
+  SearchIcon,
+  FilterIcon,
+  PinIcon,
+  XIcon,
+  HeartIcon,
+  BoltIcon,
+} from "../components/icons";
 
 const SWIPE_THRESHOLD = 110;
 
-export function HomeMatchScreen() {
-  const { data } = useOnboarding();
+export function PlusOneScreen() {
+  const navigate = useNavigate();
   const [queue, setQueue] = useState<MatchProfile[]>(MATCHES);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
@@ -13,12 +22,12 @@ export function HomeMatchScreen() {
   const current = queue[0];
 
   const dismiss = useCallback((dir: "left" | "right") => {
-    setOffset({ x: dir === "right" ? 420 : -420, y: 30 });
+    setOffset({ x: dir === "right" ? 460 : -460, y: 40 });
     window.setTimeout(() => {
       setQueue((q) => q.slice(1));
       setOffset({ x: 0, y: 0 });
       setDragging(false);
-    }, 220);
+    }, 240);
   }, []);
 
   function onPointerDown(e: PointerEvent<HTMLElement>) {
@@ -47,59 +56,52 @@ export function HomeMatchScreen() {
   }
 
   const rotate = offset.x * 0.04;
-  const likeOpacity = Math.min(1, Math.max(0, offset.x / 100));
-  const nopeOpacity = Math.min(1, Math.max(0, -offset.x / 100));
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <header className="match-header">
-        <div>
-          <p className="eyebrow">Home</p>
-          <h2 className="h2">
-            {data.name ? `Hey ${data.name.split(" ")[0]}` : "Your matches"}
-          </h2>
+    <div className="plus-one-screen">
+      <AppHeader variant="plain" showMessage />
+
+      <div className="search-row">
+        <div className="search-field">
+          <SearchIcon />
+          <input readOnly placeholder="Search you best match" />
         </div>
-        <div className="brand-mark" style={{ fontSize: "1.25rem" }}>
-          Gym<span className="plus">+1</span>
-        </div>
-      </header>
+        <button type="button" className="search-filter" aria-label="Filters">
+          <FilterIcon />
+        </button>
+      </div>
 
       <div className="deck">
         {!current ? (
           <div className="empty-deck">
-            <p className="h2">You’re caught up</p>
-            <p style={{ marginTop: 8 }}>
-              Check the +1 feed for people posting workouts near you.
+            <p className="subhead" style={{ color: "#000" }}>
+              You're all caught up
             </p>
+            <p style={{ marginTop: 8 }}>New +1s near you will appear here.</p>
           </div>
         ) : (
           <article
-            className="match-card"
+            className="swipe-card"
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
             style={{
               transform: `translate(${offset.x}px, ${offset.y}px) rotate(${rotate}deg)`,
-              transition: dragging ? "none" : "transform 0.25s ease",
+              transition: dragging ? "none" : "transform 0.28s ease",
             }}
+            onClick={() => !dragging && navigate(`/app/match?id=${current.id}`)}
           >
             <div
-              className="photo"
+              className="swipe-photo"
               style={{ backgroundImage: `url(${current.photo})` }}
             />
-            <div className="stamp like" style={{ opacity: likeOpacity }}>
-              +1
-            </div>
-            <div className="stamp nope" style={{ opacity: nopeOpacity }}>
-              Skip
-            </div>
-            <div className="meta">
+            <div className="swipe-info">
               <h2>
                 {current.name}, {current.age}
               </h2>
-              <p>
-                {current.gym} · {current.focus}
+              <p className="away">
+                <PinIcon size={15} /> {current.distance}
               </p>
             </div>
           </article>
@@ -114,15 +116,23 @@ export function HomeMatchScreen() {
             aria-label="Skip"
             onClick={() => dismiss("left")}
           >
-            ✕
+            <XIcon />
           </button>
           <button
             type="button"
             className="swipe-btn like"
-            aria-label="Match"
-            onClick={() => dismiss("right")}
+            aria-label="Like"
+            onClick={() => navigate(`/app/match-success?id=${current.id}`)}
           >
-            +1
+            <HeartIcon size={30} />
+          </button>
+          <button
+            type="button"
+            className="swipe-btn boost"
+            aria-label="Boost"
+            onClick={() => navigate("/app/spotlight")}
+          >
+            <BoltIcon />
           </button>
         </div>
       )}
