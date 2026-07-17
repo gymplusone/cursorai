@@ -1616,6 +1616,382 @@ img {
   margin-top: 24px;
 }
 
+/* ---------- Invites blur + paywall ---------- */
+.invite-photo.blurred {
+  filter: blur(9px);
+  transform: scale(1.06);
+}
+
+.upgrade-modal {
+  width: min(86%, 340px);
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px 24px 24px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: rise 0.25s ease both;
+}
+
+.upgrade-modal h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.upgrade-modal p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 10px 0 18px;
+}
+
+.upgrade-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 20px;
+}
+
+.upgrade-avatar.blurred {
+  filter: blur(6px);
+}
+
+.success-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+}
+
+/* ---------- Super +1 benefits ---------- */
+.benefit-list {
+  list-style: none;
+  text-align: left;
+  max-width: 320px;
+  margin: 18px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #333;
+}
+
+.benefit-tick {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+
+/* ---------- It's A Match! ---------- */
+.match-success {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.ms-top {
+  display: flex;
+}
+
+.ms-cards {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 48px;
+}
+
+.ms-photo {
+  width: 42%;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.ms-photo:first-child {
+  transform: rotate(-4deg);
+}
+
+.ms-photo.tilt {
+  transform: rotate(4deg);
+}
+
+.ms-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  border: 5px solid #fff;
+}
+
+.ms-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-top: 40px;
+}
+
+.ms-sub {
+  color: #222;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.ms-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #ececf0;
+  border-radius: var(--radius-pill);
+  padding: 0 20px;
+  min-height: 58px;
+  color: #555;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.ms-message svg {
+  color: var(--blue);
+}
+
+/* ---------- Chat thread ---------- */
+.thread-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.thread-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.thread-avatar.sm {
+  width: 44px;
+  height: 44px;
+}
+
+.thread-header strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.thread-header span {
+  font-size: 0.75rem;
+  color: var(--green);
+}
+
+.thread-body-msgs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 2px;
+  overflow-y: auto;
+}
+
+.bubble {
+  max-width: 78%;
+  padding: 11px 15px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.bubble.them {
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 6px;
+}
+
+.bubble.me {
+  align-self: flex-end;
+  background: var(--blue);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.thread-compose {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ececf0;
+  border-radius: var(--radius-pill);
+  padding: 0 8px 0 18px;
+  min-height: 54px;
+  margin-top: 8px;
+}
+
+.thread-compose input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.thread-compose button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+/* ---------- Notifications / Settings ---------- */
+.list-screen {
+  min-height: 100%;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.list-header h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notif-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.notif-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--lav);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.notif-item strong {
+  display: block;
+  font-size: 0.92rem;
+}
+
+.notif-item span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.settings-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+
+.settings-profile strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.settings-profile span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.settings-group {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-ic {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--lav);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.settings-chev {
+  margin-left: auto;
+  color: var(--muted-soft);
+  font-size: 1.3rem;
+}
+
+.logout-btn {
+  margin-top: 4px;
+}
+
+.plan-bookmark.saved {
+  color: var(--blue);
+}
+
 @media (max-width: 480px) {
   .app-shell {
     padding: 0;

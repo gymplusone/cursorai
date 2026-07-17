@@ -19,6 +19,10 @@ import { ChatScreen } from "./screens/ChatScreen";
 import { SpotlightScreen } from "./screens/SpotlightScreen";
 import { SuperPlusOneScreen } from "./screens/SuperPlusOneScreen";
 import { PlanDetailScreen } from "./screens/PlanDetailScreen";
+import { MatchSuccessScreen } from "./screens/MatchSuccessScreen";
+import { ChatThreadScreen } from "./screens/ChatThreadScreen";
+import { NotificationsScreen } from "./screens/NotificationsScreen";
+import { SettingsScreen } from "./screens/SettingsScreen";
 
 export default function App() {
   return (
@@ -50,9 +54,13 @@ export default function App() {
                 <Route path="home" element={<SocialFeedScreen />} />
                 <Route path="plus-one" element={<PlusOneScreen />} />
                 <Route path="match" element={<HomeScreen />} />
+                <Route path="match-success" element={<MatchSuccessScreen />} />
                 <Route path="calendar" element={<CalendarScreen />} />
                 <Route path="invites" element={<InvitesScreen />} />
                 <Route path="chat" element={<ChatScreen />} />
+                <Route path="chat/:id" element={<ChatThreadScreen />} />
+                <Route path="notifications" element={<NotificationsScreen />} />
+                <Route path="settings" element={<SettingsScreen />} />
                 <Route path="spotlight" element={<SpotlightScreen />} />
                 <Route
                   path="super-plus-one"

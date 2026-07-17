@@ -35,12 +35,22 @@ export function AppHeader({ variant = "brand", showMessage = false }: Props) {
       )}
       <div className="actions">
         {showMessage && (
-          <button type="button" className="icon-sq" aria-label="Messages">
+          <button
+            type="button"
+            className="icon-sq"
+            aria-label="Messages"
+            onClick={() => navigate("/app/chat")}
+          >
             <MessageIcon />
             <span className="badge">3</span>
           </button>
         )}
-        <button type="button" className="icon-sq" aria-label="Notifications">
+        <button
+          type="button"
+          className="icon-sq"
+          aria-label="Notifications"
+          onClick={() => navigate("/app/notifications")}
+        >
           <BellIcon />
           <span className="badge">20</span>
         </button>
@@ -48,7 +58,7 @@ export function AppHeader({ variant = "brand", showMessage = false }: Props) {
           type="button"
           className="icon-sq"
           aria-label="Settings"
-          onClick={() => navigate("/app/spotlight")}
+          onClick={() => navigate("/app/settings")}
         >
           <GearIcon />
         </button>
