@@ -10,9 +10,15 @@ import { ExerciseDaysScreen } from "./screens/ExerciseDaysScreen";
 import { FitnessGoalsScreen } from "./screens/FitnessGoalsScreen";
 import { WorkoutTimeScreen } from "./screens/WorkoutTimeScreen";
 import { TabShell } from "./screens/TabShell";
-import { HomeMatchScreen } from "./screens/HomeMatchScreen";
 import { SocialFeedScreen } from "./screens/SocialFeedScreen";
-import { StubScreen } from "./screens/StubScreen";
+import { PlusOneScreen } from "./screens/PlusOneScreen";
+import { HomeScreen } from "./screens/HomeScreen";
+import { CalendarScreen } from "./screens/CalendarScreen";
+import { InvitesScreen } from "./screens/InvitesScreen";
+import { ChatScreen } from "./screens/ChatScreen";
+import { SpotlightScreen } from "./screens/SpotlightScreen";
+import { SuperPlusOneScreen } from "./screens/SuperPlusOneScreen";
+import { PlanDetailScreen } from "./screens/PlanDetailScreen";
 
 export default function App() {
   return (
@@ -41,41 +47,18 @@ export default function App() {
               <Route path="/onboarding/time" element={<WorkoutTimeScreen />} />
               <Route path="/app" element={<TabShell />}>
                 <Route index element={<Navigate to="home" replace />} />
-                <Route path="home" element={<HomeMatchScreen />} />
-                <Route path="feed" element={<SocialFeedScreen />} />
+                <Route path="home" element={<SocialFeedScreen />} />
+                <Route path="plus-one" element={<PlusOneScreen />} />
+                <Route path="match" element={<HomeScreen />} />
+                <Route path="calendar" element={<CalendarScreen />} />
+                <Route path="invites" element={<InvitesScreen />} />
+                <Route path="chat" element={<ChatScreen />} />
+                <Route path="spotlight" element={<SpotlightScreen />} />
                 <Route
-                  path="calendar"
-                  element={
-                    <StubScreen
-                      icon="Cal"
-                      eyebrow="Calendar"
-                      title="Sessions coming soon"
-                      copy="Book shared workouts once you match with a +1."
-                    />
-                  }
+                  path="super-plus-one"
+                  element={<SuperPlusOneScreen />}
                 />
-                <Route
-                  path="invites"
-                  element={
-                    <StubScreen
-                      icon="Inv"
-                      eyebrow="Invites"
-                      title="No invites yet"
-                      copy="When someone wants to train with you, it lands here."
-                    />
-                  }
-                />
-                <Route
-                  path="chat"
-                  element={
-                    <StubScreen
-                      icon="Chat"
-                      eyebrow="Chat"
-                      title="Messages live here"
-                      copy="Coordinate gym times after you both tap +1."
-                    />
-                  }
-                />
+                <Route path="plan/:id" element={<PlanDetailScreen />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
