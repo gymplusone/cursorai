@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { BackArrowIcon } from "./icons";
 
 export function BackSquare({ to }: { to?: string }) {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ export function BackSquare({ to }: { to?: string }) {
       aria-label="Back"
       onClick={() => (to ? navigate(to) : navigate(-1))}
     >
-      ←
+      <BackArrowIcon />
     </button>
   );
 }
