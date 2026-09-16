@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local ad render scratch
+ad-assets/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
