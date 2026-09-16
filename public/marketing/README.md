@@ -2,7 +2,7 @@
 
 Promo videos for [gymplusone.com/games](https://www.gymplusone.com/games).
 
-**Core message:** Gym+1 is calling all London run clubs to compete for 30% of ticket sales — with half going to a charity of their choice.
+**Core message:** Calling London run clubs, groups of friends, and anyone who loves running, competing, or supporting a charity — compete for 30% of ticket sales, with half to a charity of your choice. Not a run club? Groups of 10 friends (Gym+1 can help you make 10).
 
 | File | Format | Length | Use |
 |------|--------|--------|-----|
@@ -11,4 +11,4 @@ Promo videos for [gymplusone.com/games](https://www.gymplusone.com/games).
 | `gymplusone-games-ad-9x16.mp4` | 1080×1920 | ~22s | Reels / TikTok / Stories |
 | `games-ad-poster.png` | Still | — | Thumbnail |
 
-**Beat:** Calling all London run clubs → win 30% of ticket sales → half to a charity of your choice → live site → enter at gymplusone.com/games
+**Beat:** Broad London callout → not a run club / groups of 10 / pairing → win 30% → half to charity → live site → enter at gymplusone.com/games
