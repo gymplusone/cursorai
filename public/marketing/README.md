@@ -11,4 +11,4 @@ Promo videos for [gymplusone.com/games](https://www.gymplusone.com/games).
 | `gymplusone-games-ad-9x16.mp4` | 1080×1920 | ~22s | Reels / TikTok / Stories |
 | `games-ad-poster.png` | Still | — | Thumbnail |
 
-**Beat:** Broad London callout → not a run club / groups of 10 / pairing → win 30% → half to charity → live site → enter at gymplusone.com/games
+**Beat:** Calling London → run clubs / friends → racing or charity → not a run club? / group of 10 → Gym+1 can pair you → 30% → charity → live site → enter
