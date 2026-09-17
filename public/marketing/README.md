@@ -11,4 +11,4 @@ Promo videos for [gymplusone.com/games](https://www.gymplusone.com/games).
 | `gymplusone-games-ad-9x16.mp4` | 1080×1920 | ~22s | Reels / TikTok / Stories |
 | `games-ad-poster.png` | Still | — | Thumbnail |
 
-**Beat:** Calling London run clubs → groups of friends → why not enter → winning team of 10+ → take home 15% → donate another 15% → live site → enter
+**Beat:** Calling London run clubs → groups of friends → why not enter → winning team of 10+ → can’t find 10? Gym+1 can pair you → take home 15% → donate another 15% → live site → enter
